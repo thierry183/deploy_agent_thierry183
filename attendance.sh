@@ -60,3 +60,30 @@ echo "Keeping default thresholds (Warning=75%, Failure=50%)"
 
 fi
 
+#function to handle ctrl +c  and creating the zip file for the current state of project
+
+
+clean_up_and_exit(){
+
+echo " interupted, creating an archive!"
+if [ -d attendance_tracker_${input}" ]
+then
+	zip -r "archive.zip" "attendance_tracker_${input}"
+	rm -rf "attendance_tracker_${input}"
+
+	echo "archive created and incomplete directory removed successfully"
+fi
+exit 1
+
+}
+
+
+# now lets check if we have python 
+
+if command -v python3 --version
+then
+echo "python exists in your computer"
+else
+	echo "no python found on your computer"
+	fi
+

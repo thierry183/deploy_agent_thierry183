@@ -30,7 +30,7 @@ then
 fi
 
 #getting warning(default 75), and failure (default 50) threshold 
-
+if 
 read -p "Enter Warning threshold: " warning
 read -p "Enter Failure threshold: " failure
 
@@ -38,7 +38,7 @@ read -p "Enter Failure threshold: " failure
 
 warning=${warning:-75}
 failure=${failure:-50}
-
+then
 echo "setting Warning : ${warning:-75}% , Failure : ${failure:-50}%"
 
 
@@ -52,7 +52,7 @@ config_file="attendance_tracker_${input}/Helpers/config.json"
     sed -i "s/\"warning\": [0-9]*/\"warning\": $warning/g" "$config_file"
     sed -i "s/\"failure\": [0-9]*/\"failure\": $failure/g" "$config_file"
 
-echo"threshold updated well"
+echo "threshold updated well"
 
 else
 
@@ -61,12 +61,12 @@ echo "Keeping default thresholds (Warning=75%, Failure=50%)"
 fi
 
 #function to handle ctrl +c  and creating the zip file for the current state of project
-
+trap clean_up_and_exit SIGINT
 
 clean_up_and_exit(){
 
 echo " interupted, creating an archive!"
-if [ -d attendance_tracker_${input}" ]
+if [ -d "attendance_tracker_${input}" ]
 then
 	zip -r "archive.zip" "attendance_tracker_${input}"
 	rm -rf "attendance_tracker_${input}"

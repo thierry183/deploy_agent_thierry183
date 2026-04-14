@@ -12,12 +12,12 @@ mkdir -p " attendance_tracker_${input}"
 mkdir -p "attendance_tracker_${input}/Helpers"
 mkdir -p "attendance_tracker_${input}/reports"
 
-#creating files in their respective directories as per directory architecture
+#mafter creating files with the downloaded content i now copy them to their respective folders in the created directory architecture
 
-touch "attendance_tracker_${input}/attendance_checker.py"
-touch "attendance_tracker_${input}/Helpers/assets.csv"
-touch "attendance_tracker_${input}/Helpers/config.json"
-touch "attendance_tracker_${input}/reports/reports.log"
+cp attendance_checker.py "attendance_tracker_${input}/"
+cp assets.csv "attendance_tracker_${input}/Helpers/"
+cp config.json "attendance_tracker_${input}/Helpers/"
+cp reports.log "attendance_tracker_${input}/reports/"
 
 #asking user if they want to update the threshold
 read -p "do you choose to update the threshold? (yes/no)" choice

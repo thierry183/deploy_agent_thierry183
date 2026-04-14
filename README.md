@@ -22,6 +22,6 @@ ARCHIVE FEATURE TRIGGERING
 
 here when ever the user press ctrl +c while the script is running the sysyem will trap this SIGINT signal and then it will create an archive as a  zip  file which will include all data to where the system ended and then later on incomplete directories will be removed to keep the workspace clean.
 
-
+.
 
 

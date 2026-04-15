@@ -77,7 +77,6 @@ exit 1
 
 }
 
-
 # now lets check if we have python 
 
 if command -v python3 --version

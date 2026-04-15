@@ -6,7 +6,7 @@ echo "project readme file" > README.md
 read -p "enter name of tracker: " input
 
 # creating parent directory
-mkdir -p " attendance_tracker_${input}"
+mkdir -p "attendance_tracker_${input}"
 
 # creating other directories but inside parent directory
 mkdir -p "attendance_tracker_${input}/Helpers"
@@ -68,7 +68,7 @@ clean_up_and_exit(){
 echo " interupted, creating an archive!"
 if [ -d "attendance_tracker_${input}" ]
 then
-	zip -r "archive.zip" "attendance_tracker_${input}"
+	zip -r "attendance_tracker_${input}_archive" "attendance_tracker_${input}"
 	rm -rf "attendance_tracker_${input}"
 
 	echo "archive created and incomplete directory removed successfully"
